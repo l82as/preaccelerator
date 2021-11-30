@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pages.apps.PagesConfig',
     'django_cleanup',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -123,10 +125,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_DIRS = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [STATIC_DIRS]
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CKEDITOR_UPLOAD_PATH = "uploads/"
-CKEDITOR_BASEPATH = os.path.join(BASE_DIR, 'static')
+#CKEDITOR_UPLOAD_PATH = "uploads/"
+#CKEDITOR_BASEPATH = os.path.join(BASE_DIR, 'static')
