@@ -1,19 +1,19 @@
-from ckeditor_uploader import forms
+from django import forms
 from django.contrib import admin
 from .models import Page, TopMenu
 
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
-
 class PageAdminForm(forms.ModelForm):
     body = forms.CharField(widget=CKEditorUploadingWidget())
     class Meta:
         model = Page
+        fields = "__all__"
 
 class PageAdmin(admin.ModelAdmin):
     form = PageAdminForm
 
-admin.site.register(Page, PageAdmin)
+#admin.site.register(Page, PageAdmin)
 
 # Register your models here.
 class admPage(admin.ModelAdmin):
@@ -22,6 +22,7 @@ class admPage(admin.ModelAdmin):
     search_fields = ('title', 'body')
     list_editable = ('published',)
     list_filter = ('published', 'create')
+    form = PageAdminForm
     prepopulated_fields = {"slug":("title",)}
 admin.site.register(Page, admPage)
 admin.site.register(TopMenu)

@@ -24,7 +24,6 @@ SECRET_KEY = 'django-insecure-c=z2gdih)p%&eo$2q37se3ufox+yisyt&f+&wjyd@@kzcxyf6o
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
 
@@ -37,10 +36,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pages.apps.PagesConfig',
     'django_cleanup',
     'ckeditor',
     'ckeditor_uploader',
+    'pages.apps.PagesConfig',
 ]
 
 MIDDLEWARE = [
@@ -51,8 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'ckeditor_uploader',
-    'ckeditor',
+
 ]
 
 ROOT_URLCONF = 'preaccelerator.urls'
@@ -75,7 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'preaccelerator.wsgi.application'
-
+#WSGI_APPLICATION = 'wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
@@ -130,6 +128,6 @@ STATICFILES_DIRS = [STATIC_DIRS]
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 #STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-#CKEDITOR_UPLOAD_PATH = "uploads/"
+#DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CKEDITOR_UPLOAD_PATH = "uploads/"
 #CKEDITOR_BASEPATH = os.path.join(BASE_DIR, 'static')
