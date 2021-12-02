@@ -5,7 +5,7 @@ from .models import Page, TopMenu
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 class PageAdminForm(forms.ModelForm):
-    body = forms.CharField(widget=CKEditorUploadingWidget())
+    body = forms.CharField(label="Содержимое", widget=CKEditorUploadingWidget())
     class Meta:
         model = Page
         fields = "__all__"
